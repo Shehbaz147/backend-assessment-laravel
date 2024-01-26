@@ -3,18 +3,12 @@
 namespace App\Listeners;
 
 use App\Events\BadgeUnlocked;
+use App\Models\UserBadges;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
 class ProcessBadges
 {
-    /**
-     * Create the event listener.
-     */
-    public function __construct()
-    {
-        //
-    }
 
     /**
      * Handle the event.
@@ -24,7 +18,7 @@ class ProcessBadges
         $user = $event->user;
         $badgeName = $event->badge_name;
 
-        $user->badges->create([
+        UserBadges::create([
             "name" => $badgeName,
             "user_id" => $user->id
         ]);

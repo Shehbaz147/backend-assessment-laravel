@@ -10,7 +10,6 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Event;
-use Mockery;
 
 class CommentServiceTest extends TestCase
 {
@@ -62,7 +61,7 @@ class CommentServiceTest extends TestCase
         //     CommentWritten::class
         // );
 
-        // Assert that the CommentWritten event was dispatched with the correct arguments
+        // Assert that the CommentWritten event was dispatched
         // Event::assertDispatched(CommentWritten::class);
 
         // Clean up Mockery
